@@ -15,8 +15,13 @@
         <meta http-equiv="cleartype" content="on">
 
         <!-- StyleSheets under here -->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="themes/ssdjtheme.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" /> 
+    <!--    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+
+       
         <link rel="stylesheet" type="text/css" href="css/indexstyles.css" />
+
 
 
         <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -24,10 +29,44 @@
 
 </head>
 <body>
-        <!-- Home Page Header -->
-    <div data-role="page" id="home">
 
-        <div data-role="header" data-position="fixed">
+
+        <!-- Sign In Page Header -->
+    <div data-role="page" id="signin">
+
+        <div data-role="header" data-position="fixed" >    
+            <h1>Southern Style DJ's</h1>
+        </div>
+        <!-- Sign In Page Feature -->
+        <div style="text-align:center">
+             <a href="#home" data-ajax="false"><img src="images/ssdjlogocircle.png"/></a>
+        </div>
+        <!-- Sign In Page Sign In Form -->
+        <div data-role="fieldcontain" >
+            <p>*Fields are Required</p>
+            <label for="email">*Email:</label>
+            <input type="text" name="email" id="email" value="" />
+            <p>example: email@domain.com</p>
+            <label for="password">*Password:</label>
+            <input type="text" name="password" id="password" value="" />
+        </div>
+   
+        <div data-role="fieldcontain" data-theme="a">
+            <div>
+                <a href="#home" data-role="button" id="signin" data-theme="a">Sign In</a>
+            </div>
+            <div>
+                <a href="index.html" data-role="button" id="signup" data-theme="e">Sign Up!</a>
+            </div>
+        </div> 
+     </div>
+
+
+
+        <!-- Home Page Header -->
+    <div data-role="page" id="home" >
+
+        <div data-role="header" data-position="fixed" >
             <h1>Southern Style DJ's</h1>
         </div>
         <!-- Home Page Feature -->
@@ -36,7 +75,7 @@
         </div>
         <!-- Home Page Content -->
 
-        <div data-role="content">
+        <div data-role="content" >
             <ul data-role="listview" data-filter="true">
                 <li>
                     <a href="#dirtysouth" class="has-icon" data-ajax="false">
@@ -88,12 +127,6 @@
                 </li>
             </ul>
         </div>
-    <!--    <div data-role="fieldcontain">
-            <div>
-                <div class="ui-block-a"><input type="reset" value="Reset" data-theme="a" /></div>
-                <div class="ui-block-b"><input type="submit" value="Submit" data-theme="a" /></div>
-            </div>
-        </div> -->
 
         <!-- Home Page Footer -->
     <div data-role="footer" data-position="fixed">
@@ -102,11 +135,42 @@
                 <li><a href="#home" data-icon="home" data-iconpos="top" data-ajax="false">Home</a></li>
                 <li><a href="#favorite" data-icon="star" data-iconpos="top" data-ajax="false">Favorite</a></li>
                 <li><a href="purchase" data-icon="check" data-iconpos="top" data-ajax="false">Purchase</a></li>
-                <li><a href="#more" data-icon="info" data-iconpos="top" data-ajax="false">More</a></li>
+                <li><a href="#more" data-icon="info" data-iconpos="top" data-transition="flow">More</a></li>
             </ul>
         </div>
     </div>
 </div>
+
+
+        <!-- More Page Header -->
+    <div data-role="page" id="more" data-add-back-btn="true" >
+
+       <div data-role="header" data-position="fixed">
+            <h1>More!</h1> 
+        </div>
+        <!-- More Page Feature -->
+        <div style="text-align:center">
+             <a href="#home" data-ajax="false"><img src="images/ssdjlogocircle.png"/></a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-filter="true">
+                <h3><a href="additem.html" data-role="button" data-ajax="false">Bronze App</a></h3>
+                <h3><a href="https://github.com/jasminesloan/MIU/tree/gh-pages/week2/Bronze" data-role="button" data-ajax="false">Bronze App(Github.com)</a></h3>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-iconpos="top" data-ajax="false">Home</a></li>
+                <li><a href="#favorite" data-icon="star" data-iconpos="top" data-ajax="false">Favorite</a></li>
+                <li><a href="purchase" data-icon="check" data-iconpos="top" data-ajax="false">Purchase</a></li>
+                <li><a href="#more" data-icon="info" data-iconpos="top" data-transition="flow">More</a></li>
+            </ul>
+        </div>
+    </div>
+        
+    </div>
+
         <!-- Dirty South Page Header-->
     <div data-role="page" id="dirtysouth" data-add-back-btn="true">
 
@@ -120,6 +184,7 @@
        <!-- Dirty South Page Content -->
             <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>Southern Comfort</h3>
                     <p>1. Jeezy - Crazy World</p>
@@ -176,8 +241,10 @@
                     <p>21. Attitude - Blow Ya Back Out</p>
                     <p>22. Unk feat. Ray J - She Freaky</p>
                 </div>
+            </ul>
             </div>
         </div>
+
         
             <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -202,9 +269,11 @@
             <div data-role="header" data-position="fixed">
                 <h1>Gospel</h1>
             </div>
+
         <!-- Gospel Page Content -->
             <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>Joyful Noise Pt.1</h3>
                     <p>1. Sounds Of - Hold On</p>
@@ -263,6 +332,7 @@
                     <p>15. Ce Ce Winans - Alabaster Box</p>
                     <p>16. Kurt Carr Singers - For Every Mountain</p>
                 </div>
+            </ul>
             </div>
         </div>
             <div data-role="footer" data-position="fixed">
@@ -289,6 +359,7 @@
         <!-- Hip Hop Page Content-->
             <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>Smoke One</h3>
                     <p>1.DJ Mist Intro</p>
@@ -363,6 +434,7 @@
                     <p>22. Unk - Say Yes</p>
                     <p>23. Backbone - Poppin Rubberbands</p>
                 </div>
+            </ul>
             </div>
         </div>
             <div data-role="footer" data-position="fixed">
@@ -389,6 +461,7 @@
         <!-- Miami Bass Page Content-->
             <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                 <h3>Bass Game Pt.1</h3>
                     <p>Track Listings Unavailable</p>
@@ -511,6 +584,7 @@
                     <p>35. Yung Joc - It's Goin Down (Pimp Remix) -
                     <p>36.Oomp Camp Freestyle feat. Loko, DJ Jelly, DJ Unk
                     </div>
+                </ul>
                 </div>
             </div>
         <div data-role="footer" data-position="fixed">
@@ -537,6 +611,7 @@
             <!-- Old School Page Content-->
                 <div data-role ="collapsible-set">
                 <div data-role="content">
+                    <ul data-role="listview" data-filter="true">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>From Now Till Then</h3>
                         <p>1. The Dream feat. Young Jeezy - I Love Your Girl</p>
@@ -595,6 +670,7 @@
                         <h3>Bring Dat Beat Back Pt.2</h3>
                         <p>Track Listings Unavailable</p>
                     </div>
+                </ul>
                 </div>
             </div>
         <div data-role="footer" data-position="fixed">
@@ -621,6 +697,7 @@
         <!-- Oomp Camp Albums Page Content-->
                 <div data-role ="collapsible-set">
                 <div data-role="content">
+                    <ul data-role="listview" data-filter="true">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>Sammy Sam - Last Man Standing</h3>
                         <p>1. He´s Coming</p>
@@ -686,6 +763,7 @@
                         <p>18. Wartime in Da South</p>
                         <p>19. Get Right</p>
                     </div>
+                </ul>
                 </div>
             </div>
         <div data-role="footer" data-position="fixed">
@@ -712,6 +790,7 @@
         <!-- R&B/Slow Jams Page Content-->
         <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>Hey Love Pt.6</h3>
                     <p>1. Mariah Carey - Touch my Body Rmx (Baby D Blend)</p>
@@ -804,6 +883,7 @@
                     <p>14. Rome - I Belong</p>
                     <p>15. Jodeci - Freakin You</p>
                 </div>
+            </ul>
             </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -830,6 +910,7 @@
         <!-- Reggae Page Content-->
             <div data-role ="collapsible-set">
             <div data-role="content">
+                <ul data-role="listview" data-filter="true">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>Rude Boy Pt.1</h3>
                     <p>1. Wait - Nuh Man</p>
@@ -936,6 +1017,7 @@
                     <p>24. Unknown - Jook</p>
                     <p>25. Sean Kingston - Beautiful Girls</p>
                 </div>
+            </ul>
             </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -965,7 +1047,8 @@
 
 
 
-
+        <!-- JQuery Themes -->
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
         <!-- JavaScript under here -->
 
