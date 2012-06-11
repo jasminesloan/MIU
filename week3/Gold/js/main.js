@@ -1,3 +1,6 @@
+
+
+
 //Wait until DOM is ready.
 window.addEventListener("DOMContentLoaded", function () {
 
@@ -20,69 +23,9 @@ window.addEventListener("DOMContentLoaded", function () {
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}
+		
 		selectLi.appendChild(makeSelect);	
 	};
-
-
-	var mixtapeGenres = ["--Choose A Genre--", "Dirty South", "Gospel", "Hip Hop", "Miami Bass", "Old School", "Oomp Camp Albums", "R&B/Slow Jams", "Reggae"];
-
-	makeCats();
-
-
-	var search= $('searchBtn');
-	search.addEventListener("click", getSearch);
-
-
-	var getSearch = function(){
-		var category = $('groups').value;
-		var term = $('search').value;
-
-		//Search By Caetgory Only
-		if(category !="--Choose A Genre--" && term ===""){
-			for(i=0, j=localStorage.length; i<j; i++){
-				var key = localStorage.key(i);
-				var value = localStorage.getItem(key);
-				var obj = JSON.parse(value);
-				if(category === obj.group[1]){
-					for(n in obj){
-						console.log(obj[n][1]);
-					}
-				}
-			}
-		}
-
-	//Search By Term Only
-	if(term !="" && category === "--Choose A Genre"){
-		for(i=0, j=localStorage.length; i<j; i++){
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			var obj = JSON.parse.(value);
-			for (n in obj){
-				if(term === obj[n][1]){
-					for (q in obj){
-						console.log(obj[q][1]);
-					}
-				}
-			}
-		}
-	}
-	//Search By BOTH Category and Term
-	if(term !="" && category != "--Choose A Genre--"){
-		for(i=0, j=localStorage.length; i<j; i++){
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			var obj = JSON.parse(value);
-			for (n in obj){
-				if(term === obj[n][1] && category === obj.group[1]){
-					for (q in obj){
-						console.log(obj[q][1]);
-					}
-				}
-			}
-		}
-	}
-
-
 
 	//Find value of selected radio button.
 	var getSelectedRadio = function(){
@@ -151,6 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		alert("Mixtape Saved!");
 	};
 	
+	
 	//Create visiable storage
 	 var getData = function(){
 	 	//console.log("id");
@@ -176,7 +120,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeLi.appendChild(makeSubList);
-		 	getImage(obj.group[1], makeSubList);
+		// 	getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubLi = document.createElement('li');
 				makeSubList.appendChild(makeSubLi);
@@ -186,7 +130,31 @@ window.addEventListener("DOMContentLoaded", function () {
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/link for each item in local storage.
 		}
-	}
+	};
+	
+// JQUERY VALIDATION FORM
+		var validate = function() {
+			var parsePurchaseForm = function(data) {
+					storeData(this.key);
+			//uses form data here;	
+			console.log(data);
+		};
+		
+		$(document).ready(function(){
+				
+			var pform = $('#purchaseform');
+			
+			jQuery.validator.messages.required = "Required";
+			pform.validate({
+				invalidHandler: function(form, validator) {},
+				submitHandler: function() {
+					var data = pform.serializeArray();
+					parsePurchaseForm(data);
+				}
+			});
+			
+		});
+	};
 	
 	//Get the image for the right category
  	function getImage(catName, makeSubList){
@@ -276,8 +244,8 @@ window.addEventListener("DOMContentLoaded", function () {
 		toggleControls("off");
 		//populate the form fields with current localStorage value.
 		$('groups').value = item.group[1];
-		//$('email').value = item.email[1];
-		//$('pword').value = item.pword[1];
+		$('email').value = item.email[1];
+		$('pword').value = item.pword[1];
 		var radios = document.forms[0].answer;
 		for(var i=0; i < radios.length; i++){
 			if(radios[1].value === "Now" && item.purchaseDate[1] === "Now"){
@@ -329,38 +297,38 @@ window.addEventListener("DOMContentLoaded", function () {
 	function validate(e){
 		//Define the elements we want to check
 		var getGroup = $('groups');
-		//var getEmail = $('email');
-		//var getPassword = $('pword');
+		var getEmail = $('email');
+		var getPassword = $('pword');
 
 		//Reset Error Message
 		errMsg.innerHTML = "";
 		getGroup.style.border = "1px solid black";
-		//getEmail.style.border = "1px solid black";
-		//getPassword.style.border = "1px solid black";
+		getEmail.style.border = "1px solid black";
+		getPassword.style.border = "1px solid black";
 
 		//Get error message
 		var messageAry = [];
 		//Group Validation
 		if(getGroup.value=== "--Choose A Genre--"){
 			var groupError = "Please Chose A Genre";
-			getGroup.style.border = "1px solid red";
+			getGroup.style.border = "3px solid red";
 			messageAry.push(groupError);
 		}
 
 		//Email Validation
-		//var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w)*(\.\w{2,3})+$/;
-		//if(!(re.exec(getEmail.value))){
-		//	var emailError = "Please enter an Email Address.";
-		//	getEmail.style.border = "1px solid red";
-		//	messageAry.push(emailError);
-		//}
+		var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w)*(\.\w{2,3})+$/;
+		if(!(re.exec(getEmail.value))){
+			var emailError = "Please enter an Email Address.";
+			getEmail.style.border = "1px solid red";
+			messageAry.push(emailError);
+		}
 
 		//Password Validation
-		//if(getPassword.value=== ""){
-		//	var passwordError = "Please enter your Password.";
-		//	getPassword.style.border = "1px solid red";
-		//	messageAry.push(passwordError);
-		//}
+		if(getPassword.value=== ""){
+			var passwordError = "Please enter your Password.";
+			getPassword.style.border = "1px solid red";
+			messageAry.push(passwordError);
+		}
 
 		//If there were errors, display them on the screen
 		if(messageAry.length >= 1){
@@ -378,7 +346,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 
 	}
-
+	 
 //Variable defaults, events, and calls
 	var mixtapeGenres = ["--Choose A Genre--", "Dirty South", "Gospel", "Hip Hop", "Miami Bass", "Old School", "Oomp Camp Albums", "R&B/Slow Jams", "Reggae"];
 	var purchaseDate;
