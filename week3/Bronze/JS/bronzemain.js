@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeLi.appendChild(makeSubList);
-		// 	getImage(obj.group[1], makeSubList);
+		 	//getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubLi = document.createElement('li');
 				makeSubList.appendChild(makeSubLi);
@@ -128,13 +128,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	}
 	
 	//Get the image for the right category
- /*	function getImage(catName, makeSubList){
+ function getImage(catName, makeSubList){
 		var imageLi = document.createElement('li');
 		makeSubList.appendChild(imageLi);
 		var newImg = document.createElement('img');
 		var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");	
 		imageLi.appendChild(newImg);
-	} */
+	} 
 	
 
 	//Auto Populate Local Storage
@@ -289,16 +289,16 @@ window.addEventListener("DOMContentLoaded", function () {
 		//Email Validation
 		//var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w)*(\.\w{2,3})+$/;
 		//if(!(re.exec(getEmail.value))){
-		//	var emailError = "Please enter an Email Address.";
-		//	getEmail.style.border = "1px solid red";
-		//	messageAry.push(emailError);
+			//var emailError = "Please enter an Email Address.";
+			//getEmail.style.border = "1px solid red";
+			//messageAry.push(emailError);
 		//}
 
 		//Password Validation
 		//if(getPassword.value=== ""){
-		//	var passwordError = "Please enter your Password.";
-		//	getPassword.style.border = "1px solid red";
-		//	messageAry.push(passwordError);
+			//var passwordError = "Please enter your Password.";
+			//getPassword.style.border = "1px solid red";
+			//messageAry.push(passwordError);
 		//}
 
 		//If there were errors, display them on the screen
