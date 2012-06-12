@@ -1,4 +1,4 @@
-body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+body,h1,h2,h3,p,quote,small,ul,li,ol{
 	/* Resetting some of the page elements */
 	margin:20px;
 	padding:0px;
@@ -97,12 +97,12 @@ h2.tut{
 	font-weight:bold;
 }
 	 
-a, a:visited {
+/*a, a:visited {
 	/* Styling the links */
-	color:#00BBFF;
+	/*color:#00BBFF;
 	text-decoration:none;
 	outline:none;
-}
+}*/
 	 
 a:hover{
 	text-decoration:underline;

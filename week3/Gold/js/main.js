@@ -5,7 +5,7 @@
 window.addEventListener("DOMContentLoaded", function () {
 
 	//getElementsById Function
-	var $ = function (x) {
+	var ge = function (x) {
 		var theElement = document.getElementById(x);
 		return theElement;
 	};
@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	//create select field element and populate with options.
 	var makeCats = function () {
 			var formTag = document.getElementsByTagName("form"), //formTag is an array of all the form tags.
-				selectLi = $('select'),
+				selectLi = ge('select'),
 				makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "groups");
 		for(var i=0, j=mixtapeGenres.length; i<j; i++){
@@ -38,8 +38,8 @@ window.addEventListener("DOMContentLoaded", function () {
 	};
 
 	var getCheckboxValue =  function(){
-		if($('Yes').checked){
-			wishListValue = $('Yes').value;
+		if(ge('Yes').checked){
+			wishListValue = ge('Yes').value;
 		}else{
 			wishListValue = "No";
 		}
@@ -48,17 +48,17 @@ window.addEventListener("DOMContentLoaded", function () {
 	var toggleControls = function(n){
 		switch(n){
 			case "on":
-				$('searchForm').style.display = "none";
-				$('clear').style.display = "inline";
-				$('displayLink').style.display = "none";
-				$('addNew').style.display = "inline";
+				ge('searchForm').style.display = "none";
+				ge('clear').style.display = "inline";
+				ge('displayLink').style.display = "none";
+				ge('addNew').style.display = "inline";
 				break;
 			case "off":
-				$('searchForm').style.display = "block";
-				$('clear').style.display = "inline";
-				$('displayLink').style.display = "inline";
-				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				ge('searchForm').style.display = "block";
+				ge('clear').style.display = "inline";
+				ge('displayLink').style.display = "inline";
+				ge('addNew').style.display = "none";
+				ge('items').style.display = "none";
 				break;
 			default:
 				return false;
@@ -81,14 +81,14 @@ window.addEventListener("DOMContentLoaded", function () {
 		getSelectedRadio();
 		getCheckboxValue();
 		var item = {};
-			item.group = ["Genre:", $('groups').value];
-			//item.email = ["Email", $('email').value];
-			//item.pword = ["Password", $('pword').value];
+			item.group = ["Genre:", ge('groups').value];
+			//item.email = ["Email", ge('email').value];
+			//item.pword = ["Password", ge('pword').value];
 			item.purchase = ["Purchase:", purchaseDate];
 			item.wishlist = ["Added to Wish List", wishListValue];
-			item.date = ["Date", $('date').value];
-			item.quantity = ["Quantity", $('quantity').value];
-			item.suggestions = ["Suggestions", $('suggestions').value];
+			item.date = ["Date", ge('date').value];
+			item.quantity = ["Quantity", ge('quantity').value];
+			item.suggestions = ["Suggestions", ge('suggestions').value];
 		//Save data into Local Storage: Use stringify to convert our object
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Mixtape Saved!");
@@ -109,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$('items').style.display = "block";
+		ge('items').style.display = "block";
 			for(var i=0, len=localStorage.length; i<len;i++){
 			var makeLi = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -243,9 +243,9 @@ window.addEventListener("DOMContentLoaded", function () {
 		//Show the form
 		toggleControls("off");
 		//populate the form fields with current localStorage value.
-		$('groups').value = item.group[1];
-		$('email').value = item.email[1];
-		$('pword').value = item.pword[1];
+		ge('groups').value = item.group[1];
+		ge('email').value = item.email[1];
+		ge('pword').value = item.pword[1];
 		var radios = document.forms[0].answer;
 		for(var i=0; i < radios.length; i++){
 			if(radios[1].value === "Now" && item.purchaseDate[1] === "Now"){
@@ -255,17 +255,17 @@ window.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 		if(item.wishlist[1] === "Yes"){
-			$('yes').setAttribute("checked", "checked");
+			ge('yes').setAttribute("checked", "checked");
 		}
-		$('date').value = item.date[1];
-		$('quantity').value = item.quantity[1];
-		$('suggestions').value = item.suggestions[1];
+		ge('date').value = item.date[1];
+		ge('quantity').value = item.quantity[1];
+		ge('suggestions').value = item.suggestions[1];
 
 		//Remove the initial listener from the input "save mixtape" button.
 		save.removeEventListener("click", storeData);
 		//Change submit button value to edit button
-		$('save').value = "Edit Mixtape";
-		var editSubmit = $('save');
+		ge('save').value = "Edit Mixtape";
+		var editSubmit = ge('save');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when save the data we edited
 		editSubmit.addEventListener("click", validate);
@@ -296,9 +296,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	function validate(e){
 		//Define the elements we want to check
-		var getGroup = $('groups');
-		var getEmail = $('email');
-		var getPassword = $('pword');
+		var getGroup = ge('groups');
+		var getEmail = ge('email');
+		var getPassword = ge('pword');
 
 		//Reset Error Message
 		errMsg.innerHTML = "";
@@ -351,13 +351,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	var mixtapeGenres = ["--Choose A Genre--", "Dirty South", "Gospel", "Hip Hop", "Miami Bass", "Old School", "Oomp Camp Albums", "R&B/Slow Jams", "Reggae"];
 	var purchaseDate;
 	var	wishListValue = "No";
-	var errMsg = $('errors');
+	var errMsg = ge('errors');
 	makeCats();
-	var displayLink = $('displayLink');
+	var displayLink = ge('displayLink');
 	displayLink.addEventListener("click", getData);
-	var clearLink = $('clear');
+	var clearLink = ge('clear');
 	clearLink.addEventListener("click", clearLocal); 
-	var save = $("save");
+	var save = ge("save");
 	save.addEventListener("click", validate);
 });
 
