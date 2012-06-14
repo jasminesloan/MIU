@@ -41,6 +41,88 @@ padding-left:13%;
 
 label.error{display:block; margin:10px 0px; color:red;
 }
+#albumloko{
+	margin-top: 10px;
+}
+#lokotracks1{
+	text-align: center;
+}
+.ui-grid-b{
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+#albumintoxicated{
+	margin-top: 10px;
+}
+#intoxicatedtracks1{
+	text-align: center;
+}
+#albumsammy{
+	margin-top: 10px;
+}
+#sammytracks1{
+	text-align: center;
+}
+#albumunk{
+	margin-top: 10px;
+}
+#unktracks1{
+	text-align: center;	
+}
+#albumoomp{
+	margin-top: 10px;
+}
+#oomptracks1{
+	text-align: center;	
+}
+#albumbabyd{
+	margin-top: 10px;
+}
+#babydtracks1{
+	text-align: center;	
+}
+#albumbabyd2{
+	margin-top: 10px;
+}
+#babydtracks2{
+	text-align: center;	
+}
+#albumbabyd3{
+	margin-top: 10px;
+}
+#babydtracks3{
+	text-align: center;	
+}
+#albumsammy2{
+	margin-top: 10px;
+}
+#sammytracks2{
+	text-align: center;
+}
+#twittermix{
+	text-align: center;
+	text-decoration: underline;
+	font-size: 24px;
+	font-weight: bold; 
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#weekmix{
+	margin-left: 26px;
+	text-align: center;
+	text-decoration: underline;
+	font-size: 24px;
+	font-weight: bold; 
+	font-family: Georgia, "Times New Roman", Times, serif;	
+}
+/*a{
+	font-family: "Century Schoolbook", Helvetica, sans-serif;
+	font-size: 12px;
+	color: black;
+	text-decoration: underline;
+
+}
 /*p{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	padding-left: 20px;	

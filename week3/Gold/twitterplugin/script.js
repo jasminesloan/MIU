@@ -38,7 +38,7 @@ function TweetTick(ob)
 	
 	});
 	
-	container.jScrollPane();
+	//container.jScrollPane();
 }
 
 function formatTwitString(str)
