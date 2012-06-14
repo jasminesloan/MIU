@@ -1,5 +1,5 @@
 /* <!-- Author: Jasmine Sloan -->
-<!-- MIU: Week 1 Project -->
+<!-- MIU: Week 3 Project -->
 <!-- Term: 1204 -->
 <!-- Southern Style DJ's -->
 */
@@ -14,6 +14,7 @@ body{
 	margin:0px;
 	overflow:scroll;
 }
+
 h1{
 	/* Safari and Chrome */
 	background:-webkit-linear-gradient(top,#999,#000);
@@ -26,12 +27,14 @@ h1{
 	padding:10px 5px;
 	text-align:center;
 }
+
 img{
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
 	width:100%;
 }
+
 a{
 	font-family: "Century Schoolbook", Helvetica, sans-serif;
 	font-size: 20px;
@@ -40,12 +43,18 @@ a{
 	text-decoration: underline;
 
 }
+
 legend{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 20px;
 	color: #FFF;
 	font-weight: bold;
 }
+
+label.error{display:block; margin:10px 0; color:red;
+	
+}
+
 label{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font: 25px;
@@ -65,6 +74,7 @@ input[type=text]{
 	margin-left:-30px;
 	height: 20px;
 }
+
 p{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: #fff;
@@ -72,12 +82,14 @@ p{
 	text-align: center;
 	padding-bottom: 10px;
 }
+
 fieldset{
 	border-right: 2px solid #666;
 	border-top-right-width:1px;
 	border-left-width: 1px;
 	margin: 0px 10px 30px 10px;
 }
+
 input[type=button]{
 	/* Safari and Chrome */
 	background:-webkit-linear-gradient(top,#999,#808080);
@@ -97,6 +109,7 @@ input[type=button]{
 	font-style: italic;
 	width:250px;
 }
+
 li{
 	display: block;
 	padding-top: 20px;
