@@ -108,7 +108,7 @@
 
         <!-- User Profile Page Feature -->
         <div style="text-align:center">
-             <a href="" data-ajax="false"><img src="images/ssdjlogocircle.png"/></a>
+             <a href="#home" data-ajax="false"><img src="images/ssdjlogocircle.png"/></a>
         </div>
 
         <!-- User Profile Information Page -->
@@ -1631,8 +1631,10 @@
         
         	<form action="" method="post" id="purchaseform">
         	
+        	<p>*Fields are Required</p>
+        	
 	        	<div data-role="fieldcontain">
-	        		<label for="purchaselocation">Location (Zip Code):</label>	
+	        		<label for="purchaselocation">*Location (Zip Code):</label>	
 	        		<input type="text" name="purchaselocation" id="purchaselocation" class="required number" />
 	        	</div>
 	        	
@@ -1647,13 +1649,13 @@
 	        	</div>
 	        	
 	        	<div data-role="fieldcontain">
-					<label for="date">Date of Purchase:</label>
+					<label for="date">*Date of Purchase:</label>
 					<input type="text" name="dateofpurchase" id="date" placeholder="MM/DD/YY" class="required date" />
 				</div>
 	        	
 	        	<div data-role="fieldcontain">
-	        		<label for="quantity">Quantity:</label>
-	        		<input type="range" name="quantity" id="quantity" value="0" min="1" max="20"/>
+	        		<label for="quantity">*Quantity:</label>
+	        		<input type="range" name="quantity" id="quantity" placeholder="0" min="1" max="20"/>
 	        	</div>
 	        	
 	        	<div data-role="fieldcontain">
@@ -1661,8 +1663,18 @@
 	        		<textarea></textarea> 
 	        	</div>
 	        	
-	        	<input type="reset" value="Clear" />
 	        	<input type="submit" value="Submit Purchase" data-theme="e" />
+	        	<div class="ui-grid-a" style="text-align:center">
+                    <div class="ui-block-a">
+                        <a href="#" id="displayData" data-role="button" data-mini="true" data-theme="" data-ajax="false">Display</a>
+                    </div>
+                    
+                    <div class="ui-block-b">
+                        <a href="#" id="clearData" data-role="button" data-mini="true" data-theme="a">Clear</a>
+                        <a href="#" id="addNew" style="display:none;" data-ajax="false">Add New Item</a>
+                    </div>
+	        	</div> 
+	        	
 	        	
         	</form>
         	
@@ -1708,7 +1720,9 @@
         <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+        <script src="js/JSON.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
+        
 
     </body>
 </html>
