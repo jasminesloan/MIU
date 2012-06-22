@@ -23,6 +23,8 @@
 	padding:10px 5px;
 	text-align:center;
 }*/
+
+
 img{
 	display:block;
 	margin-left:auto;
@@ -35,11 +37,21 @@ img{
 	width:250px;
 	height: 20px;
 }*/
-.has-icon>h3, .has-icon>p{
-padding-left:13%;
+.has-icon>h2, .has-icon>p{
+	padding-left:13%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bolder;
+	font-size: large;
 }
-
+p{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;	
+}
 label.error{display:block; margin:10px 0px; color:red;
+}
+h3{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;	
 }
 #albumloko{
 	margin-top: 10px;
@@ -123,10 +135,7 @@ label.error{display:block; margin:10px 0px; color:red;
 	text-decoration: underline;
 
 }
-/*p{
-	font-family: Georgia, "Times New Roman", Times, serif;
-	padding-left: 20px;	
-}
+/*
 /*label{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	margin:10px 30px;

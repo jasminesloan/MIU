@@ -1,8 +1,9 @@
 
 // JQUERY VALIDATION FORM
-			var parsepurchaseform = function(data) {
+			var parsePurchaseForm = function(data) {
 			//uses form data here;	
-			console.log(data);
+			
+			//console.log(data);
 		};
 		
 		$(document).bind('pageinit', function(){
@@ -20,7 +21,6 @@
 			
 		});
 		
-
 	//getElementsById Function
 	var ge = function (x) {
 		var theElement = document.getElementById(x);
@@ -64,15 +64,15 @@
 	var toggleControls = function(n){
 		switch(n){
 			case "on":
-				//$('searchForm').style.display = "none";
-				ge('clearData').style.display = "inline";
-				ge('displayData').style.display = "none";
+				ge('purchaseform').style.display = "none";
+				ge('clearLink').style.display = "inline";
+				ge('displayLink').style.display = "none";
 				ge('addNew').style.display = "inline";
 				break;
 			case "off":
-			//	$('searchForm').style.display = "block";
-				ge('clearData').style.display = "inline";
-				ge('displayData').style.display = "inline";
+				ge('purchaseform').style.display = "block";
+				ge('clearLink').style.display = "inline";
+				ge('displayLink').style.display = "inline";
 				ge('addNew').style.display = "none";
 				ge('items').style.display = "none";
 				break;
@@ -90,6 +90,7 @@
 			//The key is the same that's been passed along from the editSubmit event handler
 			//to the validate function, and the passed here, into the storeData function.
 			id = key;
+			
 		}
 		
 		//Gather up all our form field values nd store in an object.
@@ -101,7 +102,7 @@
 			//item.email = ["Email", $('email').value];
 			//item.pword = ["Password", $('pword').value];
 			item.purchase = ["Purchase:", purchaseDate];
-			//item.wishlist = ["Added to Wish List", wishListValue];
+			item.wishlist = ["Added to Wish List", wishListValue];
 			item.date = ["Date", ge('date').value];
 			item.quantity = ["Quantity", ge('quantity').value];
 			item.suggestions = ["Suggestions", ge('suggestions').value];
@@ -144,7 +145,7 @@
 				makeSubLi.appendChild(linksLi);
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/link for each item in local storage.
-		}
+		};
 	}
 	
 	//Get the image for the right category
@@ -344,9 +345,9 @@
 	var	wishListValue = "No";
 	var errMsg = ge('errors');
 	makeCats();
-	var displayLink = ge('displayData');
+	var displayLink = ge('displayLink');
 	displayLink.addEventListener("click", getData);
-	var clearLink = ge('clearData');
+	var clearLink = ge('clearLink');
 	clearLink.addEventListener("click", clearLocal); 
 	var save = ge("save");
 	save.addEventListener("click", validate);
