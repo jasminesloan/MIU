@@ -1,7 +1,8 @@
 
 // JQUERY VALIDATION FORM
-			var parsepurchaseform = function(data) {
+			var parsePurchaseForm = function(data) {
 			//uses form data here;	
+			storeData(this.key);
 			console.log(data);
 		};
 		
@@ -19,6 +20,13 @@
 			});
 			
 		});
+		
+		var defaultData = function () {
+			for (var n in json){
+				var id = Math.floor(Math.random()*10000001);
+				localStorage.setItem(id, JSON.stringify(json[n]));
+			}
+		};
 		
 
 	//getElementsById Function
@@ -44,7 +52,7 @@
 	};
 
 	//Find value of selected radio button.
-	var getSelectedRadio = function(){
+/*	var getSelectedRadio = function(){
 		var radios = document.forms[ 0 ].answer;
 		for(var i=0; i < radios.length; i++){
 			if(radios[i].checked){
@@ -145,7 +153,7 @@
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/link for each item in local storage.
 		}
-	}
+	};
 	
 	//Get the image for the right category
  /*	function getImage(catName, makeSubList){
